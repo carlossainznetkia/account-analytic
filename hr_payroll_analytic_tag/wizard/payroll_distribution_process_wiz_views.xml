@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_payroll_distribution_process_wiz_form" model="ir.ui.view">
+        <field name="name">Payroll Distribution Process</field>
+        <field name="model">payroll.distribution.process.wiz</field>
+        <field name="arch" type="xml">
+            <form string="Payroll Distribution">
+                <p class="oe_grey">
+                    Upload an Excel file (.xls) with employee payroll costs to
+                    recalculate the analytic distribution percentages of the
+                    configured payroll distribution tag.
+                </p>
+                <group>
+                    <field name="file_name" readonly="1" nolabel="1" />
+                    <field name="upload_file" filename="file_name" nolabel="1" />
+                </group>
+                <footer>
+                    <button
+                        name="check_data"
+                        string="Check Data"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button
+                        name="update_distribution"
+                        string="Update Distribution"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button
+                        name="update_distribution_detail"
+                        string="Update Distribution and Get Detail"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record
+        id="action_view_payroll_distribution_process_wiz"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Payroll Distribution Process</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">payroll.distribution.process.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="menu_payroll_distribution"
+        name="Payroll Distribution"
+        parent="hr.menu_hr_root"
+        sequence="91"
+    />
+    <menuitem
+        id="menu_payroll_distribution_process"
+        parent="hr_payroll_analytic_tag.menu_payroll_distribution"
+        action="action_view_payroll_distribution_process_wiz"
+        sequence="90"
+    />
+</odoo>

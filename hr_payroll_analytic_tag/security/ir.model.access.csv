@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_payroll_distribution_process_wiz,access_payroll_distribution_process_wiz,model_payroll_distribution_process_wiz,base.group_user,1,0,0,0
+access_payroll_distribution_process_wiz_manager,access_payroll_distribution_process_wiz_manager,model_payroll_distribution_process_wiz,base.group_system,1,1,1,1

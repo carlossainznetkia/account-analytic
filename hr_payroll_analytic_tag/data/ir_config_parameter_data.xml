@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Pre-seed default column header names for the payroll Excel import.
+     noupdate="1" ensures these values are set on first install but never
+     overwritten by subsequent upgrades, so user customisations are preserved. -->
+<odoo noupdate="1">
+    <record id="param_col_header_code" model="ir.config_parameter">
+        <field name="key">hr_payroll_analytic_tag.col_header_code</field>
+        <field name="value" />
+    </record>
+    <record id="param_col_header_name" model="ir.config_parameter">
+        <field name="key">hr_payroll_analytic_tag.col_header_name</field>
+        <field name="value">EMPLOYEE NAME</field>
+    </record>
+    <record id="param_col_header_cost" model="ir.config_parameter">
+        <field name="key">hr_payroll_analytic_tag.col_header_cost</field>
+        <field name="value">COMPANY COST</field>
+    </record>
+</odoo>
